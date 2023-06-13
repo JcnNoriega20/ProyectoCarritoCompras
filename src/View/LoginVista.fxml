@@ -1,96 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="vtnLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="362.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
-   <children>
-      <Pane fx:id="panelLogin" layoutX="99.0" layoutY="14.0" prefHeight="200.0" prefWidth="239.0" style="-fx-background-color: FFF8E1;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
-         <padding>
-            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-         </padding>
+<BorderPane fx:id="panelLogin" maxHeight="999.0" maxWidth="999.0" prefHeight="400.0" prefWidth="393.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PanelLoginController">
+   <center>
+      <VBox alignment="CENTER_LEFT" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: FFF8E1;" BorderPane.alignment="TOP_LEFT">
          <children>
-            <Label fx:id="lblLink" alignment="CENTER" layoutX="165.0" layoutY="264.0" onMouseClicked="#click" onMouseEntered="#cambiarCursor" text="Registrese aquí" textOverrun="CENTER_ELLIPSIS">
+            <Pane prefHeight="139.0" prefWidth="393.0" />
+            <Label prefHeight="37.0" prefWidth="504.0" text="Correo electronico">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="12.0" />
+               </padding>
             </Label>
-            <Label layoutX="34.0" layoutY="154.0" text="Correo electronico">
+            <TextField fx:id="txtUser" prefHeight="25.0" prefWidth="306.0">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin></TextField>
+            <Label prefHeight="37.0" prefWidth="481.0" text="Contraseña">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="12.0" />
+               </padding>
             </Label>
-            <TextField fx:id="txtUser" layoutX="34.0" layoutY="174.0" prefHeight="25.0" prefWidth="265.0" />
-            <Label layoutX="34.0" layoutY="214.0" text="Contraseña">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="34.0" layoutY="264.0" text="¿Nuevo usuario?" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="txtPass" layoutX="34.0" layoutY="235.0" prefHeight="25.0" prefWidth="265.0" />
-            <Button fx:id="btnLogin" layoutX="46.0" layoutY="299.0" mnemonicParsing="false" onAction="#iniciarSesion" onMouseEntered="#cambiarCursor" prefHeight="25.0" prefWidth="247.0" text="INGRESAR" />
+            <PasswordField fx:id="txtPass" prefHeight="25.0" prefWidth="345.0">
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin></PasswordField>
+            <Pane prefHeight="26.0" prefWidth="424.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="2.0" layoutY="-1.0" text="¿Nuevo usuario?" textOverrun="CENTER_ELLIPSIS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <padding>
+                        <Insets top="12.0" />
+                     </padding>
+                  </Label>
+                  <Button fx:id="btnIrReg" graphicTextGap="0.0" layoutX="122.0" layoutY="6.0" mnemonicParsing="false" onAction="#cargarRegister" style="-fx-background-color: transparent;" text="Registrese aquí">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </VBox.margin>
+            </Pane>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#iniciarSesion" onMouseEntered="#cambiarCursor" prefHeight="25.0" prefWidth="217.0" text="INGRESAR">
+               <VBox.margin>
+                  <Insets left="61.0" right="20.0" top="20.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
-         <opaqueInsets>
-            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-         </opaqueInsets>
-      </Pane>
-      <Pane fx:id="panelRegister" layoutX="109.0" layoutY="24.0" prefHeight="200.0" prefWidth="239.0" style="-fx-background-color: FFF8E1;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
          <padding>
-            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
-         <opaqueInsets>
-            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-         </opaqueInsets>
-         <children>
-            <Label layoutX="34.0" layoutY="111.0" text="Número Celular">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtNumCel" layoutX="34.0" layoutY="132.0" prefHeight="25.0" prefWidth="265.0" />
-            <Label layoutX="34.0" layoutY="163.0" text="Contraseña">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="txtPassReg" layoutX="34.0" layoutY="185.0" prefHeight="25.0" prefWidth="265.0" />
-            <Button fx:id="btnRegister" layoutX="46.0" layoutY="331.0" mnemonicParsing="false" onAction="#iniciarSesion" onMouseEntered="#cambiarCursor" prefHeight="25.0" prefWidth="247.0" text="REGISTRARSE" />
-            <Label layoutX="34.0" layoutY="59.0" text="Correo electronico">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtEmailReg" layoutX="34.0" layoutY="80.0" prefHeight="25.0" prefWidth="265.0" />
-            <Label layoutX="34.0" layoutY="7.0" text="Nombre y Apellidos">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtNomApeReg" layoutX="34.0" layoutY="28.0" prefHeight="25.0" prefWidth="265.0" />
-            <Label layoutX="34.0" layoutY="216.0" text="Fecha de Nacimiento">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="txtFechaNac" layoutX="34.0" layoutY="238.0" prefHeight="25.0" prefWidth="265.0" />
-            <Label layoutX="34.0" layoutY="269.0" text="Género">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <ComboBox fx:id="cmbGender" layoutX="34.0" layoutY="290.0" onShowing="#viewGender" prefHeight="25.0" prefWidth="265.0" promptText="Seleccione una opción" visibleRowCount="2" />
-         </children>
-      </Pane>
-   </children>
-</AnchorPane>
+      </VBox>
+   </center>
+</BorderPane>

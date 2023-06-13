@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PanelRegisterController">
+   <children>
+      <VBox layoutX="16.0" layoutY="21.0" prefHeight="356.0" prefWidth="438.0" style="-fx-background-color: FFF8E1;">
+         <children>
+            <Label text="Nombre y Apellidos">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtNomApeReg" prefHeight="25.0" prefWidth="265.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Correo electronico">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtEmailReg" prefHeight="25.0" prefWidth="265.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Número Celular">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtNumCel" prefHeight="25.0" prefWidth="265.0">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Contraseña">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <PasswordField fx:id="txtPassReg" prefHeight="25.0" prefWidth="265.0">
+               <VBox.margin>
+                  <Insets left="45.0" right="45.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Label text="Fecha de Nacimiento">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="txtFechaNac" prefHeight="25.0" prefWidth="265.0">
+               <VBox.margin>
+                  <Insets left="45.0" right="45.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Género">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ComboBox fx:id="cmbGender" onShowing="#viewGender" prefHeight="25.0" prefWidth="350.0" promptText="Seleccione una opción" visibleRowCount="2">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" />
+               </VBox.margin>
+            </ComboBox>
+            <Button fx:id="btnRegister" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#registrarUser" onMouseEntered="#cambiarCursor" prefHeight="25.0" prefWidth="431.0" text="REGISTRARSE">
+               <VBox.margin>
+                  <Insets left="50.0" right="50.0" top="12.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
