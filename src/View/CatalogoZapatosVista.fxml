@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CatalogoZapatosController">
+   <children>
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="53.0" prefWidth="726.0" style="-fx-background-color: A8A8A8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button layoutX="15.0" layoutY="12.0" mnemonicParsing="false" text="opciones" />
+            <Button layoutX="1012.0" layoutY="14.0" mnemonicParsing="false" text="cuenta usuario" />
+            <Button layoutX="928.0" layoutY="14.0" mnemonicParsing="false" text="entregados" />
+            <Button layoutX="869.0" layoutY="14.0" mnemonicParsing="false" text="carrito" />
+         </children>
+      </Pane>
+      <GridPane layoutY="51.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="470.0" prefWidth="869.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Pane fx:id="zapato1" style="-fx-background-color: C5EAFF;">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img1" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato5" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img5" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato2" layoutX="18.0" layoutY="18.0" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img2" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato3" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img3" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato4" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img4" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato6" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img6" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato7" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img7" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="zapato8" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </GridPane.margin>
+               <children>
+                  <Pane fx:id="img8" layoutX="7.0" layoutY="7.0" prefHeight="151.0" prefWidth="251.0" style="-fx-background-color: white;">
+                     <padding>
+                        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

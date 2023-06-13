@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane accessibleText="Login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="362.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginController">
+   <children>
+      <Pane layoutX="99.0" layoutY="14.0" prefHeight="200.0" prefWidth="239.0" style="-fx-background-color: FFF8E1;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="12.0">
+         <padding>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </padding>
+         <children>
+            <Label fx:id="lblLink" alignment="CENTER" layoutX="165.0" layoutY="264.0" onMouseClicked="#click" onMouseEntered="#cambiarCursor" text="Registrese aquí" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="154.0" text="Correo electronico">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUser" layoutX="34.0" layoutY="174.0" prefHeight="25.0" prefWidth="265.0" />
+            <Label layoutX="34.0" layoutY="214.0" text="Contraseña">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="34.0" layoutY="264.0" text="¿Nuevo usuario?" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="txtPass" layoutX="34.0" layoutY="235.0" prefHeight="25.0" prefWidth="265.0" />
+            <Button fx:id="btnLogin" layoutX="46.0" layoutY="299.0" mnemonicParsing="false" onAction="#iniciarSesion" onMouseEntered="#cambiarCursor" prefHeight="25.0" prefWidth="247.0" text="INGRESAR" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </opaqueInsets>
+      </Pane>
+   </children>
+</AnchorPane>
