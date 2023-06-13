@@ -55,9 +55,7 @@ public class PanelLoginController implements Initializable {
     @FXML
     private void cambiarCursor(MouseEvent event) {
         lblLink.setCursor(Cursor.HAND);
-    }
-
-    
+    }    
 
     @FXML
     private void iniciarSesion(ActionEvent event) {
@@ -65,10 +63,14 @@ public class PanelLoginController implements Initializable {
 
     @FXML
     private void cargarRegister(ActionEvent event) throws IOException {
-        AnchorPane paneReg = FXMLLoader.load(getClass().getResource("/View/PanelRegister.fxml"));        
+        AnchorPane paneReg = FXMLLoader.load(getClass().getResource("/View/PanelRegister.fxml"));
         
         
-        panelLogin.getChildren().setAll(paneReg);
+        Stage panelReg = new Stage();
+        Scene regScene = new Scene(paneReg, 470, 460);
+        
+        panelReg.setScene(regScene);
+        panelReg.show();
         
         
     }
