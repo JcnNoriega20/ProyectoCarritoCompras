@@ -59,6 +59,7 @@ public class PanelLoginController implements Initializable {
 
     @FXML
     private void iniciarSesion(ActionEvent event) {
+        System.out.println("El usuario ha iniciado sesión");
     }
 
     @FXML
