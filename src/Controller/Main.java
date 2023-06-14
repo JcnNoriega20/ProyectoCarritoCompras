@@ -8,14 +8,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class VtnLogin extends Application {
+public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) {
 
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(VtnLogin.class.getResource("/View/LoginVista.fxml"));
+            loader.setLocation(Main.class.getResource("/View/LoginVista.fxml"));
             Pane ventana = (Pane) loader.load();
 
             // Show the scene containing the root layout.
