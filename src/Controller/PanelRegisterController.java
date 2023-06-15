@@ -10,17 +10,14 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author wikicamus
- */
 public class PanelRegisterController implements Initializable {
 
     @FXML
@@ -37,6 +34,8 @@ public class PanelRegisterController implements Initializable {
     private ComboBox<?> cmbGender;
     @FXML
     private Button btnRegister;
+    @FXML
+    private Button btnRegresarLogin;
 
     /**
      * Initializes the controller class.
@@ -44,7 +43,7 @@ public class PanelRegisterController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void viewGender(Event event) {
@@ -58,5 +57,12 @@ public class PanelRegisterController implements Initializable {
     private void registrarUser(ActionEvent event) {
         System.out.println("Hola mundo");
     }
-    
+
+    @FXML
+    private void cerrarRegister(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
 }

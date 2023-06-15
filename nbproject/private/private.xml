@@ -4,11 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/PanelLoginController.java</file>
+            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/View/VtnMetodoPago.fxml</file>
             <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Model/NodoZapato.java</file>
             <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/Main.java</file>
+            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/View/LoginVista.fxml</file>
             <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/CatalogoZapatosController.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/PanelProductoController.java</file>
             <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/View/CatalogoZapatosVista.fxml</file>
+            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/PanelRegisterController.java</file>
+            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/VtnMetodoPagoController.java</file>
         </group>
     </open-files>
 </project-private>

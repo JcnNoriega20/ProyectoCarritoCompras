@@ -51,25 +51,24 @@ public class PanelLoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void iniciarSesion(ActionEvent event) {
         try {
             AnchorPane panelCatalogo = FXMLLoader.load(getClass().getResource("/View/CatalogoZapatosVista.fxml"));
-            
+
             Stage stage = new Stage();
             Scene scene = new Scene(panelCatalogo);
-            
+
             stage.setScene(scene);
             stage.show();
-            
+
             Stage ventanaPrincipal = (Stage) ((Node) event.getSource()).getScene().getWindow();
             ventanaPrincipal.close();
 
-            
         } catch (IOException ex) {
-            Logger.getLogger(PanelLoginController.class.getName()).log(Level.SEVERE, "El error es: " + ex, ex);
+            Logger.getLogger(PanelLoginController.class.getName()).log(Level.SEVERE, "" + ex, ex);
         }
         System.out.println("El usuario ha iniciado sesión");
     }

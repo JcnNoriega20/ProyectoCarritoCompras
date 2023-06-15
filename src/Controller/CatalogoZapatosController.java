@@ -1,29 +1,29 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package Controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javax.swing.text.html.HTMLDocument;
 
-/**
- * FXML Controller class
- *
- * @author wikicamus
- */
+
 public class CatalogoZapatosController implements Initializable {
 
     @FXML
@@ -96,11 +96,11 @@ public class CatalogoZapatosController implements Initializable {
     private Pane panelContenProdPagados;
     @FXML
     private Pane panelContenOpcUser;
-   
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         panelProducto.setVisible(false);
-    }    
+    }
 
     @FXML
     private void mostrarCarrito(ActionEvent event) {
@@ -129,6 +129,19 @@ public class CatalogoZapatosController implements Initializable {
 
     @FXML
     private void pagarProducto(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/VtnMetodoPago.fxml"));
+            AnchorPane paneMetodoPago;
+            paneMetodoPago = loader.load();
+            VtnMetodoPagoController controller = loader.getController();
+
+            Stage stage = new Stage();
+            stage.setScene(new Scene(paneMetodoPago));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(CatalogoZapatosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @FXML
@@ -136,7 +149,7 @@ public class CatalogoZapatosController implements Initializable {
         panelContenOpcUser.setVisible(!panelContenOpcUser.isVisible());
         panelContenProdPagados.setVisible(false);
         panelContenedorCarrito.setVisible(false);
-        
+
     }
 
     @FXML
@@ -153,6 +166,5 @@ public class CatalogoZapatosController implements Initializable {
     @FXML
     private void cerrarSesion(ActionEvent event) {
     }
-    
-    
+
 }
