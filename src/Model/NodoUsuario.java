@@ -9,6 +9,7 @@ package Model;
  * @author wikicamus
  */
 public class NodoUsuario {
+
     String nombre;
     String email;
     String numCel;
@@ -28,5 +29,4 @@ public class NodoUsuario {
         this.ant = null;
     }
 
-    
 }

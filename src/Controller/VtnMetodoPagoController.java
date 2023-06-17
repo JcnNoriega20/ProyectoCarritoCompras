@@ -51,28 +51,29 @@ public class VtnMetodoPagoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        lbl1.setVisible(false);
+        lbl2.setVisible(false);
+        lbl3.setVisible(false);
+        lbl4.setVisible(false);
+        txt1.setVisible(false);
+        txt2.setVisible(false);
+        txt3.setVisible(false);
+        txt4.setVisible(false);
+        txt4.setVisible(false);
         ObservableList<String> elementos = FXCollections.observableArrayList("Selecciones una opción",
                 "Tarjeta Crédito",
                 "Tarjeta Débito",
                 "Bancolombia",
                 "Cuenta Nequi",
                 "Cuenta Daviplata");
-        
+
         cmbMetodoPago.setItems(elementos);
         cmbMetodoPago.setValue(elementos.get(0));
         cmbMetodoPago.setOnAction((event) -> {
             int metodo = cmbMetodoPago.getSelectionModel().getSelectedIndex();
             switch (metodo) {
                 case 0:
-                    lbl1.setVisible(false);
-                    lbl2.setVisible(false);
-                    lbl3.setVisible(false);
-                    lbl4.setVisible(false);
-                    txt1.setVisible(false);
-                    txt2.setVisible(false);
-                    txt3.setVisible(false);
-                    txt4.setVisible(false);
-                    txt4.setVisible(false);
+
                     btnRealizarCompra.setDisable(true);
                     break;
                 case 1:

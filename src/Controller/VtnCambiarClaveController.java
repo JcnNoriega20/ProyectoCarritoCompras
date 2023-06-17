@@ -30,7 +30,7 @@ public class VtnCambiarClaveController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     @FXML
     private void validarCorreo(ActionEvent event) {
@@ -39,5 +39,5 @@ public class VtnCambiarClaveController implements Initializable {
     @FXML
     private void cerrarVtnChngPass(ActionEvent event) {
     }
-    
+
 }

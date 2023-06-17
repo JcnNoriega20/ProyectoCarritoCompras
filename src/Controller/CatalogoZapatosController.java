@@ -34,8 +34,7 @@ import javafx.util.Duration;
 
 public class CatalogoZapatosController implements Initializable {
 
-    ListaDobleUsuario metodsUser = new ListaDobleUsuario();
-    private PanelLoginController logController;
+    
     @FXML
     private Pane zapato1;
     @FXML
@@ -175,7 +174,7 @@ public class CatalogoZapatosController implements Initializable {
             contendElemtZapatos.add(lblPrecio, 0, 2);
             contendElemtZapatos.add(btnEliminar, 1, 2);
 
-            metodsUser.alerta("Aviso", "Se ha agregado un elemento al carrito");
+            
 
             panelContenCarrito.getChildren().add(contendElemtZapatos);
         }
@@ -184,11 +183,7 @@ public class CatalogoZapatosController implements Initializable {
 
     @FXML
     private void volverCatalogo(ActionEvent event) {
-        TranslateTransition transition = new TranslateTransition(Duration.seconds(2), panelProducto);
-        transition.setFromX(panelProducto.getWidth());
-        transition.setToX(0);
-        transition.play();
-        //panelProducto.setVisible(true);
+        
         panelProducto.setVisible(false);
     }
 
@@ -225,19 +220,10 @@ public class CatalogoZapatosController implements Initializable {
 
     @FXML
     private void cerrarSesion(ActionEvent event) throws IOException {
-        // Código para cerrar sesión
         
-        // Llamada al método de cerrar sesión en el controlador de inicio de sesión
-        logController.cerrarSesion();
-        
-        // Cerrar la ventana actual
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
     }
     
-     public void setLoginController(PanelLoginController loginController) {
-        this.logController = loginController;
-    }
+     
 
     @FXML
     private void realizarPago(ActionEvent event) {

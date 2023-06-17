@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import Model.ListaDobleUsuario;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,9 +22,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -32,15 +35,13 @@ import javafx.stage.Stage;
  * @author wikicamus
  */
 public class PanelLoginController implements Initializable {
-
-    private CatalogoZapatosController catalogoController;
+    
     @FXML
     private BorderPane panelLogin;
     @FXML
     private TextField txtUser;
     @FXML
-    private PasswordField txtPass;
-    private Label lblLink;
+    private PasswordField txtPass;    
     @FXML
     private Button btnLogin;
     @FXML
@@ -49,60 +50,68 @@ public class PanelLoginController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    ListaDobleUsuario metodUser = new ListaDobleUsuario();
+    
+    public PanelLoginController() {
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
     
-    public void setCatalogoController(CatalogoZapatosController catalogoController) {
-        this.catalogoController = catalogoController;
-    }
-    
-    public void cerrarSesion() throws IOException {
-        // Código para cerrar sesión
-        
-        // Mostrar nuevamente la ventana de inicio de sesión
-        Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/LoginVista.fxml"));
-        BorderPane root = loader.load();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        
-        // Configurar el controlador del catálogo de productos en null
-        catalogoController.setLoginController(null);
-    }
-
     @FXML
     private void iniciarSesion(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/CatalogoZapatosVista.fxml"));
-        Parent root = loader.load();
-        CatalogoZapatosController catalogoController = loader.getController();
-
-        Scene scene = new Scene(root);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-        catalogoController.setLoginController(this);
-            System.out.println("El usuario ha iniciado sesión");
-        } catch (IOException ex) {
-            Logger.getLogger(PanelLoginController.class.getName()).log(Level.SEVERE, "" + ex, ex);
+        //metodUser.validarCuenta(txtUser, txtPass);
+        boolean validar = metodUser.validarCuenta(txtUser, txtPass) == true;
+        if (validar == true) {
+            metodUser.alerta("Aviso", "Sí ingresó");
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/CatalogoZapatosVista.fxml"));
+                Parent root = loader.load();
+                CatalogoZapatosController catalogoController = loader.getController();
+                
+                Scene scene = new Scene(root);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                
+                System.out.println("El usuario ha iniciado sesión");
+            } catch (IOException ex) {
+                Logger.getLogger(PanelLoginController.class.getName()).log(Level.SEVERE, "" + ex, ex);
+            }
+        } else {
+            metodUser.alerta("Aviso", "No ingresó");
         }
         
     }
-
+    
     @FXML
     private void cargarRegister(ActionEvent event) throws IOException {
-        AnchorPane paneReg = FXMLLoader.load(getClass().getResource("/View/PanelRegister.fxml"));
-
-        Stage panelReg = new Stage();
-        Scene regScene = new Scene(paneReg);
-
-        panelReg.setScene(regScene);
-        panelReg.show();
-
+        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/PanelRegister.fxml"));
+            Parent root = loader.load();
+            PanelRegisterController controller = loader.getController();
+            controller.setMiPrincipal(metodUser);
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setTitle("Registro de usuario");
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
     }
-
+    
+    @FXML
+    private void validarCorreo(KeyEvent event) {
+    }
+    
+    private void mostrarUser(ActionEvent event) {
+        metodUser.mostrarUser();
+    }
+    
 }
