@@ -4,6 +4,9 @@
  */
 package Model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 /**
  *
  * @author wikicamus
@@ -13,18 +16,18 @@ public class NodoUsuario {
     String nombre;
     String email;
     String numCel;
-    String cont;
-    String fechaNac;
-    String edad;
+    String passwd;
+    LocalDate fechaNac; 
+    String gen;
     NodoUsuario sig, ant;
-
-    public NodoUsuario(String nombre, String email, String numCel, String cont, String fechaNac, String edad) {
+    
+    public NodoUsuario(String nombre, String email, String numCel, String passwd, LocalDate fechaNac, String gen) {
         this.nombre = nombre;
         this.email = email;
         this.numCel = numCel;
-        this.cont = cont;
-        this.fechaNac = fechaNac;
-        this.edad = edad;
+        this.passwd = passwd;
+        this.fechaNac = fechaNac;    
+        this.gen = gen;
         this.sig = null;
         this.ant = null;
     }

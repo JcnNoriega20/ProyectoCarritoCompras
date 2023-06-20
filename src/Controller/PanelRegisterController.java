@@ -96,32 +96,15 @@ public class PanelRegisterController implements Initializable {
 
     @FXML
     private void registrarUser(ActionEvent event) {
-        String newValue = txtEmailReg.getText();
-        if (!newValue.matches("^[\\w\\d]+@\\w+\\.shoes\\.com$")) {
-            txtEmailReg.setText("");
-            txtEmailReg.setStyle("-fx-background-color: #FFCCCC;");
-
-        } else {
-
-            metodUser2.setAddFinal(
+         metodUser2.setAddFinal(
                     txtNomApeReg,
                     txtEmailReg,
                     txtNumCel,
-                    txtNumCel,
+                    txtPassReg,
                     dateFechaNac,
                     cmbGender);
-            System.out.println(dateFechaNac.getValue());
-            System.out.println("Usuario registrado");
-            txtNomApeReg.setText("");
-            txtEmailReg.setText("");
-            dateFechaNac.setValue(null);
-            txtNumCel.setText("");
-            txtPassReg.setText("");
-            cmbGender.getSelectionModel().selectFirst();
-            Stage stage = (Stage) this.btnRegister.getScene().getWindow();
-            stage.close();
-        }
-
+         metodUser2.guardarDatosEnArchivo(metodUser2);
+        
     }
 
     @FXML
@@ -131,6 +114,8 @@ public class PanelRegisterController implements Initializable {
 
     @FXML
     private void cerrarRegister(ActionEvent event) {
+            Stage stage = (Stage) this.btnRegister.getScene().getWindow();
+            stage.close();
     }
 
 }

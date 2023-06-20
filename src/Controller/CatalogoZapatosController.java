@@ -3,21 +3,22 @@ package Controller;
 import Model.ListaDobleUsuario;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
@@ -30,11 +31,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class CatalogoZapatosController implements Initializable {
 
-    
     @FXML
     private Pane zapato1;
     @FXML
@@ -122,6 +121,34 @@ public class CatalogoZapatosController implements Initializable {
     @FXML
     private Button btnAggCrto2;
 
+    ListaDobleUsuario metodUser;
+    private Map<Pane, Image> paneImageMap;
+    @FXML
+    private Pane panelContGenShoes;
+    @FXML
+    private Button btnShoesWoman;
+    @FXML
+    private Button btnShoesMen;
+    @FXML
+    private Button btnOpciones;
+
+    public CatalogoZapatosController() {
+
+    }
+
+    public CatalogoZapatosController(ListaDobleUsuario metodUser) {
+        this.metodUser = metodUser;
+
+    }
+
+    public ListaDobleUsuario getMetodUser() {
+        return metodUser;
+    }
+
+    public void setMetodUser(ListaDobleUsuario metodUser) {
+        this.metodUser = metodUser;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         scrollPane.setVisible(false);
@@ -129,6 +156,30 @@ public class CatalogoZapatosController implements Initializable {
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
 
+        almacenarImagen();
+        mostrarImagenes();
+    }
+
+    private void mostrarImagenes() {
+        for (Map.Entry<Pane, Image> entry : paneImageMap.entrySet()) {
+            Pane pane = entry.getKey();
+            Image image = entry.getValue();
+
+            ImageView imageView = new ImageView(image);
+            pane.getChildren().add(imageView);
+        }
+    }
+
+    private void almacenarImagen() {
+        paneImageMap = new HashMap<>();
+        paneImageMap.put(img1, new Image("/Images/shoesMen1.jpg"));
+        paneImageMap.put(img2, new Image("/Images/shoesMen2.jpg"));
+        paneImageMap.put(img3, new Image("/Images/shoesMen3.jpg"));
+        paneImageMap.put(img4, new Image("/Images/shoesMen4.jpg"));
+        paneImageMap.put(img5, new Image("/Images/shoesMen5.jpg"));
+        paneImageMap.put(img6, new Image("/Images/shoesMen6.jpg"));
+        paneImageMap.put(img7, new Image("/Images/shoesMen7.jpg"));
+        paneImageMap.put(img8, new Image("/Images/shoesMen8.jpg"));
     }
 
     @FXML
@@ -174,8 +225,6 @@ public class CatalogoZapatosController implements Initializable {
             contendElemtZapatos.add(lblPrecio, 0, 2);
             contendElemtZapatos.add(btnEliminar, 1, 2);
 
-            
-
             panelContenCarrito.getChildren().add(contendElemtZapatos);
         }
 
@@ -183,7 +232,7 @@ public class CatalogoZapatosController implements Initializable {
 
     @FXML
     private void volverCatalogo(ActionEvent event) {
-        
+
         panelProducto.setVisible(false);
     }
 
@@ -209,10 +258,11 @@ public class CatalogoZapatosController implements Initializable {
             AnchorPane vtnCambiarContra;
             vtnCambiarContra = loader.load();
             VtnCambiarClaveController controller = loader.getController();
+            controller.setMetodsUser(metodUser);
 
             Stage stage = new Stage();
             stage.setScene(new Scene(vtnCambiarContra));
-            stage.show();
+            stage.showAndWait();
         } catch (IOException ex) {
             Logger.getLogger(CatalogoZapatosController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -220,10 +270,8 @@ public class CatalogoZapatosController implements Initializable {
 
     @FXML
     private void cerrarSesion(ActionEvent event) throws IOException {
-        
+
     }
-    
-     
 
     @FXML
     private void realizarPago(ActionEvent event) {
@@ -238,6 +286,43 @@ public class CatalogoZapatosController implements Initializable {
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(CatalogoZapatosController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void mostrarOpciones(ActionEvent event) {
+        panelContGenShoes.setVisible(!panelContGenShoes.isVisible());
+        panelContenProdPagados.setVisible(false);
+        scrollPane.setVisible(false);
+        panelContenOpcUser.setVisible(false);
+    }
+
+    @FXML
+    private void changeGenShoes(ActionEvent event) {
+        Button eventBtn = (Button) event.getSource();
+
+        if (eventBtn.getId().equals("btnShoesWoman")) {
+            paneImageMap = new HashMap<>();
+            paneImageMap.put(img1, new Image("/Images/shoesWoman1.jpg"));
+            paneImageMap.put(img2, new Image("/Images/shoesWoman2.jpg"));
+            paneImageMap.put(img3, new Image("/Images/shoesWoman3.jpg"));
+            paneImageMap.put(img4, new Image("/Images/shoesWoman4.jpg"));
+            paneImageMap.put(img5, new Image("/Images/shoesWoman5.jpg"));
+            paneImageMap.put(img6, new Image("/Images/shoesWoman6.jpg"));
+            paneImageMap.put(img7, new Image("/Images/shoesWoman7.jpg"));
+            paneImageMap.put(img8, new Image("/Images/shoesWoman8.jpg"));
+            mostrarImagenes();
+        } else if (eventBtn.getId().equals("btnShoesMen")) {
+            paneImageMap = new HashMap<>();
+            paneImageMap.put(img1, new Image("/Images/shoesMen1.jpg"));
+            paneImageMap.put(img2, new Image("/Images/shoesMen2.jpg"));
+            paneImageMap.put(img3, new Image("/Images/shoesMen3.jpg"));
+            paneImageMap.put(img4, new Image("/Images/shoesMen4.jpg"));
+            paneImageMap.put(img5, new Image("/Images/shoesMen5.jpg"));
+            paneImageMap.put(img6, new Image("/Images/shoesMen6.jpg"));
+            paneImageMap.put(img7, new Image("/Images/shoesMen7.jpg"));
+            paneImageMap.put(img8, new Image("/Images/shoesMen8.jpg"));
+            mostrarImagenes();
         }
     }
 

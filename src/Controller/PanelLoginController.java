@@ -14,17 +14,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -53,11 +49,12 @@ public class PanelLoginController implements Initializable {
     ListaDobleUsuario metodUser = new ListaDobleUsuario();
     
     public PanelLoginController() {
+        metodUser.cargarDatosDesdeArchivo();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        metodUser.cargarDatosDesdeArchivo();
     }
     
     @FXML
@@ -70,11 +67,11 @@ public class PanelLoginController implements Initializable {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/CatalogoZapatosVista.fxml"));
                 Parent root = loader.load();
                 CatalogoZapatosController catalogoController = loader.getController();
-                
+                catalogoController.setMetodUser(metodUser);
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
-                stage.show();
+                stage.showAndWait();
                 
                 System.out.println("El usuario ha iniciado sesión");
             } catch (IOException ex) {

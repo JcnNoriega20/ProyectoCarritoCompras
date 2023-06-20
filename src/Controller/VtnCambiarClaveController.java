@@ -4,13 +4,16 @@
  */
 package Controller;
 
+import Model.ListaDobleUsuario;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -20,13 +23,38 @@ import javafx.scene.control.TextField;
 public class VtnCambiarClaveController implements Initializable {
 
     @FXML
-    private TextField txtChangePass;
-    @FXML
     private Button btnValidarCorreo;
+
+    @FXML
+    private Button btnCancelar;
+
+    ListaDobleUsuario metodsUser;
+    @FXML
+    private Label lblTexto;
+    @FXML
+    private TextField txtGetEmail;
+    @FXML
+    private TextField txtGetPasNew;
 
     /**
      * Initializes the controller class.
      */
+
+    public VtnCambiarClaveController() {
+    }
+
+    public VtnCambiarClaveController(ListaDobleUsuario metodUser) {
+        this.metodsUser = metodUser;
+    }
+
+    public ListaDobleUsuario getMetodsUser() {
+        return metodsUser;
+    }
+
+    public void setMetodsUser(ListaDobleUsuario metodsUser) {
+        this.metodsUser = metodsUser;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -34,10 +62,15 @@ public class VtnCambiarClaveController implements Initializable {
 
     @FXML
     private void validarCorreo(ActionEvent event) {
+        metodsUser.modificarContrasena(txtGetEmail,txtGetPasNew,lblTexto, btnValidarCorreo);
+        
     }
 
     @FXML
     private void cerrarVtnChngPass(ActionEvent event) {
+        Stage stage = (Stage) this.btnCancelar.getScene().getWindow();
+        stage.close();
+
     }
 
 }

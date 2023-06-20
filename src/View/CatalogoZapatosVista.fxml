@@ -30,7 +30,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Pane fx:id="zapato1" style="-fx-background-color: C5EAFF;">
+            <Pane fx:id="zapato1" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;">
                <GridPane.margin>
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </GridPane.margin>
@@ -46,6 +46,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato5" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.rowIndex="1">
@@ -64,6 +65,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato2" layoutX="18.0" layoutY="18.0" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1">
@@ -82,6 +84,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato3" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2">
@@ -100,6 +103,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="184.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato4" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3">
@@ -118,6 +122,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato6" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -136,6 +141,7 @@
                   <Label layoutX="9.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="176.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="99.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="10.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato7" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -154,6 +160,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato8" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -172,6 +179,7 @@
                   <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
                   <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
                   <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
          </children>
@@ -257,14 +265,20 @@
                   </VBox>
                </content>
             </ScrollPane>
-            <Pane fx:id="panelContenProdPagados" layoutX="675.0" layoutY="41.0" prefHeight="451.0" prefWidth="372.0" style="-fx-background-color: white;" visible="false" />
-            <Pane fx:id="panelContenOpcUser" layoutX="715.0" layoutY="40.0" prefHeight="81.0" prefWidth="251.0" style="-fx-background-color: white;" visible="false">
+            <Pane fx:id="panelContenProdPagados" layoutX="675.0" layoutY="41.0" prefHeight="451.0" prefWidth="372.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3px;" visible="false" />
+            <Pane fx:id="panelContenOpcUser" layoutX="715.0" layoutY="40.0" prefHeight="81.0" prefWidth="251.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3px;" visible="false">
                <children>
                   <Button fx:id="btnCambiarContrasena" layoutX="13.0" layoutY="16.0" mnemonicParsing="false" onAction="#cambiarContrasena" prefHeight="25.0" prefWidth="225.0" text="CAMBIAR CONTRASEÑA" />
                   <Button fx:id="btnCerrarSesion" layoutX="13.0" layoutY="41.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="225.0" text="CERRAR SESIÓN" />
                </children>
             </Pane>
-            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="opciones" />
+            <Pane fx:id="panelContGenShoes" layoutX="15.0" layoutY="41.0" prefHeight="81.0" prefWidth="251.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 3px;" visible="false">
+               <children>
+                  <Button fx:id="btnShoesWoman" layoutX="13.0" layoutY="16.0" mnemonicParsing="false" onAction="#changeGenShoes" prefHeight="25.0" prefWidth="225.0" text="ZAPATOS PARA MUJER" />
+                  <Button fx:id="btnShoesMen" layoutX="13.0" layoutY="41.0" mnemonicParsing="false" onAction="#changeGenShoes" prefHeight="25.0" prefWidth="225.0" text="ZAPATOS PARA HOMBRE" />
+               </children>
+            </Pane>
+            <Button fx:id="btnOpciones" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarOpciones" text="opciones" />
             <Button fx:id="btnOpcionesUser" layoutX="872.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarOpcionesUser" text="cuenta usuario" />
             <Button fx:id="btnentregados" layoutX="972.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarEntregados" text="entregados" />
             <Button fx:id="btnMostrarCarrito" layoutX="1055.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarCarrito" text="carrito" />
