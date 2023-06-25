@@ -16,7 +16,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import sun.text.Normalizer;
 
 public class ListaDobleUsuario {
 
@@ -202,8 +201,7 @@ public class ListaDobleUsuario {
             TextField txtPasswd,
             DatePicker txtfechaNac,
             ComboBox cmbGender) {
-        //Creamos el nodo que se desea registrar
-        //en la lista
+        
         NodoUsuario info = getCrearNodo(txtNombre, txtEmail, txtNumCel,
                 txtPasswd, txtfechaNac, cmbGender);
 
@@ -212,11 +210,8 @@ public class ListaDobleUsuario {
                 cab = info;
                 alerta("Aviso", "Se ha registrado");
             } else {
-                //Enlazamos el nuevo nodo a la lista
                 info.sig = cab;
                 cab.ant = info;
-                //Ahora se debe mover cab al primer 
-                //nuevo elemento
                 cab = info;
                 alerta("Aviso", "Se ha registrado al inicio ");
             }
@@ -224,7 +219,7 @@ public class ListaDobleUsuario {
         }
     }
 
-    //Este método agrega un nuevo Nodo al final de la lista.
+    
     public void setAddFinal(
             TextField txtNombre,
             TextField txtEmail,
@@ -232,7 +227,7 @@ public class ListaDobleUsuario {
             TextField txtPasswd,
             DatePicker txtfechaNac,
             ComboBox cmbGender) {
-        //Creamos el nuevo Nodo a registrar
+        
         NodoUsuario nuevoUser = getCrearNodo(
                 txtNombre,
                 txtEmail,
@@ -283,12 +278,14 @@ public class ListaDobleUsuario {
     }
 
     public ListaDobleUsuario cargarDatosDesdeArchivo() {
-        String filePath = "user.txt";
+        String nombreArchivo = "user.txt";
+        Path ubicacion = Paths.get(System.getProperty("user.dir"), nombreArchivo);
+
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         ListaDobleUsuario listaUsuarios = new ListaDobleUsuario();
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(ubicacion.toFile()))) {
             String linea;
 
             while ((linea = reader.readLine()) != null) {
@@ -316,17 +313,13 @@ public class ListaDobleUsuario {
         NodoUsuario nuevoNodo = new NodoUsuario(nombre, correo, numCelular, contrasena, fechaNacimiento, genero);
 
         if (cab == null) {
-            // La lista está vacía, el nuevo nodo se convierte en la cabecera
+            
             cab = nuevoNodo;
         } else {
-            NodoUsuario temp = cab;
-
-            // Avanzar hasta el último nodo
+            NodoUsuario temp = cab;            
             while (temp.sig != null) {
                 temp = temp.sig;
-            }
-
-            // Establecer el nuevo nodo como el siguiente del último nodo
+            }            
             temp.sig=nuevoNodo;
             nuevoNodo.ant=temp;
         }

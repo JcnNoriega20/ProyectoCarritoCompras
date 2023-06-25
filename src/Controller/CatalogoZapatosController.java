@@ -31,6 +31,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import sun.plugin2.os.windows.Windows;
 
 public class CatalogoZapatosController implements Initializable {
 
@@ -131,6 +132,9 @@ public class CatalogoZapatosController implements Initializable {
     private Button btnShoesMen;
     @FXML
     private Button btnOpciones;
+    @FXML
+    private GridPane contenedorCatalogo;
+    
 
     public CatalogoZapatosController() {
 
@@ -190,8 +194,17 @@ public class CatalogoZapatosController implements Initializable {
     }
 
     @FXML
-    private void mostrarProducto(MouseEvent event) {
+    private String mostrarProducto(MouseEvent event) {
+        Pane eventPane = (Pane) event.getSource();
         panelProducto.setVisible(true);
+        //Image image = new Image("/Images/shoesMen1.jpg");
+        return eventPane.getId();
+    }
+
+    @FXML
+    private void volverCatalogo(ActionEvent event) {
+        panelProducto.setVisible(false);
+        panelFoto.getChildren().remove(new ImageView());
     }
 
     @FXML
@@ -231,17 +244,10 @@ public class CatalogoZapatosController implements Initializable {
     }
 
     @FXML
-    private void volverCatalogo(ActionEvent event) {
-
-        panelProducto.setVisible(false);
-    }
-
-    @FXML
     private void mostrarOpcionesUser(ActionEvent event) {
         panelContenOpcUser.setVisible(!panelContenOpcUser.isVisible());
         panelContenProdPagados.setVisible(false);
         scrollPane.setVisible(false);
-
     }
 
     @FXML
@@ -262,6 +268,7 @@ public class CatalogoZapatosController implements Initializable {
 
             Stage stage = new Stage();
             stage.setScene(new Scene(vtnCambiarContra));
+            stage.setTitle("CAMBIAR CONTRASEÑA");
             stage.showAndWait();
         } catch (IOException ex) {
             Logger.getLogger(CatalogoZapatosController.class.getName()).log(Level.SEVERE, null, ex);
@@ -283,6 +290,7 @@ public class CatalogoZapatosController implements Initializable {
 
             Stage stage = new Stage();
             stage.setScene(new Scene(paneMetodoPago));
+            stage.setTitle("PAGAR PRODUCTO");
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(CatalogoZapatosController.class.getName()).log(Level.SEVERE, null, ex);

@@ -24,11 +24,8 @@ public class VtnCambiarClaveController implements Initializable {
 
     @FXML
     private Button btnValidarCorreo;
-
     @FXML
     private Button btnCancelar;
-
-    ListaDobleUsuario metodsUser;
     @FXML
     private Label lblTexto;
     @FXML
@@ -39,6 +36,7 @@ public class VtnCambiarClaveController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    ListaDobleUsuario metodsUser;
 
     public VtnCambiarClaveController() {
     }
@@ -62,7 +60,9 @@ public class VtnCambiarClaveController implements Initializable {
 
     @FXML
     private void validarCorreo(ActionEvent event) {
-        metodsUser.modificarContrasena(txtGetEmail,txtGetPasNew,lblTexto, btnValidarCorreo);
+        metodsUser.modificarContrasena(
+                txtGetEmail,txtGetPasNew,
+                lblTexto, btnValidarCorreo);
         
     }
 

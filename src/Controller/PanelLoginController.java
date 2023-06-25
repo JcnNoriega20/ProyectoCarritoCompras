@@ -69,8 +69,10 @@ public class PanelLoginController implements Initializable {
                 CatalogoZapatosController catalogoController = loader.getController();
                 catalogoController.setMetodUser(metodUser);
                 Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();                
                 stage.setScene(scene);
+                stage.setTitle("Bienvenido a SHOES JUAN");
                 stage.showAndWait();
                 
                 System.out.println("El usuario ha iniciado sesión");
@@ -107,8 +109,6 @@ public class PanelLoginController implements Initializable {
     private void validarCorreo(KeyEvent event) {
     }
     
-    private void mostrarUser(ActionEvent event) {
-        metodUser.mostrarUser();
-    }
+    
     
 }

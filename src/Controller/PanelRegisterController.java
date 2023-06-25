@@ -34,15 +34,12 @@ public class PanelRegisterController implements Initializable {
     private TextField txtEmailReg;
     @FXML
     private TextField txtNumCel;
-
     @FXML
     private ComboBox<String> cmbGender;
     @FXML
     private Button btnRegister;
     @FXML
     private Button btnRegresarLogin;
-
-    ListaDobleUsuario metodUser2;
     @FXML
     private PasswordField txtPassReg;
     @FXML
@@ -51,6 +48,7 @@ public class PanelRegisterController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    ListaDobleUsuario metodUser2;
     public PanelRegisterController() {
     }
 
