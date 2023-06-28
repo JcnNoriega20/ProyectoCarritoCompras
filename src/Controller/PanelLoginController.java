@@ -68,9 +68,9 @@ public class PanelLoginController implements Initializable {
                 Parent root = loader.load();
                 CatalogoZapatosController catalogoController = loader.getController();
                 catalogoController.setMetodUser(metodUser);
-                Scene scene = new Scene(root);
                 
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();                
+                Scene scene = new Scene(root);                
+                Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.setTitle("Bienvenido a SHOES JUAN");
                 stage.showAndWait();

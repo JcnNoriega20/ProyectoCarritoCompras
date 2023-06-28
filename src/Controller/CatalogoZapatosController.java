@@ -8,7 +8,9 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -34,6 +36,9 @@ import javafx.stage.Stage;
 import sun.plugin2.os.windows.Windows;
 
 public class CatalogoZapatosController implements Initializable {
+
+    ListaDobleUsuario metodUser;
+    private Map<Pane, Image> paneImageMap;
 
     @FXML
     private Pane zapato1;
@@ -109,6 +114,7 @@ public class CatalogoZapatosController implements Initializable {
     private Button btnPagarProduct;
     @FXML
     private Button btnAggCrto1;
+
     @FXML
     private Button btnAggCrto4;
     @FXML
@@ -121,9 +127,6 @@ public class CatalogoZapatosController implements Initializable {
     private Button btnAggCrto8;
     @FXML
     private Button btnAggCrto2;
-
-    ListaDobleUsuario metodUser;
-    private Map<Pane, Image> paneImageMap;
     @FXML
     private Pane panelContGenShoes;
     @FXML
@@ -134,7 +137,85 @@ public class CatalogoZapatosController implements Initializable {
     private Button btnOpciones;
     @FXML
     private GridPane contenedorCatalogo;
-    
+    @FXML
+    private ComboBox<String> cmbTalla1;
+    @FXML
+    private Label lblMarca1;
+    @FXML
+    private Label lblGenero1;
+    @FXML
+    private Label lblTipo1;
+    @FXML
+    private ComboBox<String> cmbTalla5;
+    @FXML
+    private Label lblMarca5;
+    @FXML
+    private Label lblGenero5;
+    @FXML
+    private Label lblTipo5;
+    @FXML
+    private Label lblPrecio5;
+    @FXML
+    private ComboBox<String> cmbTalla2;
+    @FXML
+    private Label lblMarca2;
+    @FXML
+    private Label lblGenero2;
+    @FXML
+    private Label lblTipo2;
+    @FXML
+    private Label lblPrecio2;
+    @FXML
+    private Label lblMarca3;
+    @FXML
+    private Label lblGenero3;
+    @FXML
+    private Label lblTipo3;
+    @FXML
+    private Label lblPrecio3;
+    @FXML
+    private ComboBox<String> cmbTalla4;
+    @FXML
+    private Label lblMarca4;
+    @FXML
+    private Label lblGenero4;
+    @FXML
+    private Label lblTipo4;
+    @FXML
+    private Label lblPrecio4;
+    @FXML
+    private ComboBox<String> cmbTalla6;
+    @FXML
+    private Label lblMarca6;
+    @FXML
+    private Label lblGenero6;
+    @FXML
+    private Label lblTipo6;
+    @FXML
+    private Label lblPrecio6;
+    @FXML
+    private ComboBox<String> cmbTalla7;
+    @FXML
+    private Label lblMarca7;
+    @FXML
+    private Label lblGenero7;
+    @FXML
+    private Label lblTipo7;
+    @FXML
+    private Label lblPrecio7;
+    @FXML
+    private ComboBox<String> cmbTalla8;
+    @FXML
+    private Label lblMarca8;
+    @FXML
+    private Label lblGenero8;
+    @FXML
+    private Label lblTipo8;
+    @FXML
+    private Label lblPrecio8;
+    @FXML
+    private ComboBox<String> cmbTalla3;
+    private int i = 0;
 
     public CatalogoZapatosController() {
 
@@ -159,7 +240,17 @@ public class CatalogoZapatosController implements Initializable {
         panelProducto.setVisible(false);
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
-
+        
+        String[] valuesCmb = {"35","36","37","38","39","40"};
+        cmbTalla1.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla2.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla3.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla4.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla5.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla6.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla7.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTalla8.setItems(FXCollections.observableArrayList(valuesCmb));
+                
         almacenarImagen();
         mostrarImagenes();
     }
@@ -210,35 +301,209 @@ public class CatalogoZapatosController implements Initializable {
     @FXML
     private void cambiarCursor(MouseEvent event) {
     }
-
+    
     @FXML
     private void aggCarrito(ActionEvent event) {
         Button eventBtn = (Button) event.getSource();
-        if (eventBtn.getId().equals("btnAggCrto1")) {
-            Label lblTalla = new Label("TALLA: ");
-            Label lblPrecio = new Label("PRECIO: ");
-            Label lblMarca = new Label("MARCA: ");
-            Label lblGenero = new Label("GENERO: ");
-            Label lblTipoZap = new Label("TIPO ZAPATO: ");
-            Button btnEliminar = new Button("Eliminar Carrito");
-            GridPane contendElemtZapatos = new GridPane();
-            System.out.println(btnEliminar.getAccessibleText());
+        Label lblTalla = new Label();
+        Label lblPrecio = new Label();
+        Label lblMarca = new Label();
+        Label lblGenero = new Label();
+        Label lblTipoZap = new Label();
+        Button btnEliminar = new Button("Eliminar Carrito");
+        GridPane contendElemtZapatos = new GridPane();
+        ColumnConstraints column = new ColumnConstraints();
+        btnEliminar.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // Acciones a realizar cuando se hace clic en el botón
+                System.out.println("Botón clickeado");
+                System.out.println(btnEliminar.getId());
+                panelContenCarrito.getChildren().remove(contendElemtZapatos);
+            }
+        });
 
-            ColumnConstraints column1 = new ColumnConstraints();
-            column1.setPrefWidth(panelContenCarrito.getWidth() / 2);
+        switch (eventBtn.getId()) {
+            case "btnAggCrto1":
+                lblTalla.setText(cmbTalla1.getValue());
+                lblPrecio.setText(lblPrecio1.getText());
+                lblMarca.setText(lblMarca1.getText());
+                lblGenero.setText(lblGenero1.getText());
+                lblTipoZap.setText(lblTipo1.getText());
 
-            contendElemtZapatos.getColumnConstraints().addAll(column1);
-            contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
-            contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
 
-            contendElemtZapatos.add(lblMarca, 0, 0);
-            contendElemtZapatos.add(lblTipoZap, 1, 0);
-            contendElemtZapatos.add(lblGenero, 0, 1);
-            contendElemtZapatos.add(lblTalla, 1, 1);
-            contendElemtZapatos.add(lblPrecio, 0, 2);
-            contendElemtZapatos.add(btnEliminar, 1, 2);
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
 
-            panelContenCarrito.getChildren().add(contendElemtZapatos);
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+            case "btnAggCrto2":
+                lblTalla.setText(cmbTalla2.getValue());
+                lblPrecio.setText(lblPrecio2.getText());
+                lblMarca.setText(lblMarca2.getText());
+                lblGenero.setText(lblGenero2.getText());
+                lblTipoZap.setText(lblTipo2.getText());
+
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+
+            case "btnAggCrto3":
+                lblTalla.setText(cmbTalla3.getValue());
+                lblPrecio.setText(lblPrecio3.getText());
+                lblMarca.setText(lblMarca3.getText());
+                lblGenero.setText(lblGenero3.getText());
+                lblTipoZap.setText(lblTipo3.getText());
+
+                //ColumnConstraints column = new ColumnConstraints();
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+            case "btnAggCrto4":
+                lblTalla.setText(cmbTalla4.getValue());
+                lblPrecio.setText(lblPrecio4.getText());
+                lblMarca.setText(lblMarca4.getText());
+                lblGenero.setText(lblGenero4.getText());
+                lblTipoZap.setText(lblTipo4.getText());
+
+                //ColumnConstraints column = new ColumnConstraints();
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+            case "btnAggCrto5":
+                lblTalla.setText(cmbTalla5.getValue());
+                lblPrecio.setText(lblPrecio5.getText());
+                lblMarca.setText(lblMarca5.getText());
+                lblGenero.setText(lblGenero5.getText());
+                lblTipoZap.setText(lblTipo5.getText());
+
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+            case "btnAggCrto6":
+                lblTalla.setText(cmbTalla1.getValue());
+                lblPrecio.setText(lblPrecio1.getText());
+                lblMarca.setText(lblMarca1.getText());
+                lblGenero.setText(lblGenero1.getText());
+                lblTipoZap.setText(lblTipo1.getText());
+
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+            case "btnAggCrto7":
+                lblTalla.setText(cmbTalla1.getValue());
+                lblPrecio.setText(lblPrecio1.getText());
+                lblMarca.setText(lblMarca1.getText());
+                lblGenero.setText(lblGenero1.getText());
+                lblTipoZap.setText(lblTipo1.getText());
+
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+            case "btnAggCrto8":
+                lblTalla.setText(cmbTalla1.getValue());
+                lblPrecio.setText(lblPrecio1.getText());
+                lblMarca.setText(lblMarca1.getText());
+                lblGenero.setText(lblGenero1.getText());
+                lblTipoZap.setText(lblTipo1.getText());
+
+                column.setPrefWidth(panelContenCarrito.getWidth() / 2);
+
+                contendElemtZapatos.getColumnConstraints().addAll(column);
+                contendElemtZapatos.prefWidth(panelContenCarrito.getMaxWidth());
+                contendElemtZapatos.setBackground(new Background(new BackgroundFill(Color.LIGHTBLUE, null, null)));
+
+                contendElemtZapatos.add(lblMarca, 0, 0);
+                contendElemtZapatos.add(lblTipoZap, 1, 0);
+                contendElemtZapatos.add(lblGenero, 0, 1);
+                contendElemtZapatos.add(lblTalla, 1, 1);
+                contendElemtZapatos.add(lblPrecio, 0, 2);
+                contendElemtZapatos.add(btnEliminar, 1, 2);
+
+                panelContenCarrito.getChildren().add(contendElemtZapatos);
+                break;
+
         }
 
     }
@@ -265,7 +530,6 @@ public class CatalogoZapatosController implements Initializable {
             vtnCambiarContra = loader.load();
             VtnCambiarClaveController controller = loader.getController();
             controller.setMetodsUser(metodUser);
-
             Stage stage = new Stage();
             stage.setScene(new Scene(vtnCambiarContra));
             stage.setTitle("CAMBIAR CONTRASEÑA");

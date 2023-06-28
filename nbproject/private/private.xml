@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/PanelLoginController.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Model/NodoZapato.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/Main.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/CatalogoZapatosController.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Model/ListaDobleUsuario.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/VtnCambiarClaveController.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/View/CatalogoZapatosVista.fxml</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Model/NodoUsuario.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/PanelRegisterController.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Controller/VtnMetodoPagoController.java</file>
-            <file>file:/C:/Users/57312/Documents/NetBeansProjects/JUAN/PROYECTO%20PROGRAMACION/ProyectoCarritoCompras/src/Model/ListaDobleZapato.java</file>
+            <file>file:/C:/Users/Lorica03/Documents/ALURA/ProyectoCarritoCompras-main/src/Controller/Main.java</file>
+            <file>file:/C:/Users/Lorica03/Documents/ALURA/ProyectoCarritoCompras-main/src/Controller/PanelRegisterController.java</file>
+            <file>file:/C:/Users/Lorica03/Documents/ALURA/ProyectoCarritoCompras-main/src/Controller/CatalogoZapatosController.java</file>
+            <file>file:/C:/Users/Lorica03/Documents/ALURA/ProyectoCarritoCompras-main/src/Controller/PanelLoginController.java</file>
+            <file>file:/C:/Users/Lorica03/Documents/ALURA/ProyectoCarritoCompras-main/src/Model/ListaDobleUsuario.java</file>
         </group>
     </open-files>
 </project-private>

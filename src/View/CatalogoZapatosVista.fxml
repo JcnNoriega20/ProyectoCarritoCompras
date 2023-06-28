@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CatalogoZapatosController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1120.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CatalogoZapatosController">
    <children>
       <GridPane fx:id="contenedorCatalogo" layoutY="51.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="470.0" prefWidth="869.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
         <columnConstraints>
@@ -39,14 +39,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto1" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto1" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla1" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca1" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero1" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo1" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio1" layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato5" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.rowIndex="1">
@@ -58,14 +64,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto4" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto4" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla5" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca5" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero5" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo5" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio5" layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato2" layoutX="18.0" layoutY="18.0" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1">
@@ -77,14 +89,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto2" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto2" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla2" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca2" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero2" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo2" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio2" layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato3" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2">
@@ -96,14 +114,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto3" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto3" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla3" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="184.0" text="PRECIO" />
+                  <Label fx:id="lblMarca3" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero3" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo3" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio3" layoutX="13.0" layoutY="184.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato4" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3">
@@ -115,14 +139,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto4" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto4" layoutX="64.0" layoutY="250.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla4" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca4" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero4" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo4" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio4" layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato6" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -134,14 +164,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto5" layoutX="61.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="99.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto5" layoutX="61.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla6" layoutX="99.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="13.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="9.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="176.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="99.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="10.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca6" layoutX="9.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero6" layoutX="176.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo6" layoutX="99.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio6" layoutX="10.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato7" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -153,14 +189,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto7" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto7" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla7" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca7" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero7" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo7" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio7" layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
             <Pane fx:id="zapato8" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -172,14 +214,20 @@
                      <padding>
                         <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
                      </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Pane>
-                  <Button fx:id="btnAggCrto8" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO" />
-                  <ComboBox layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
+                  <Button fx:id="btnAggCrto8" layoutX="64.0" layoutY="249.0" mnemonicParsing="false" onAction="#aggCarrito" text="AGREGAR AL CARRITO">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <ComboBox fx:id="cmbTalla8" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca8" layoutX="13.0" layoutY="158.0" text="MARCA" />
+                  <Label fx:id="lblGenero8" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
+                  <Label fx:id="lblTipo8" layoutX="103.0" layoutY="158.0" text="TIPO" />
+                  <Label fx:id="lblPrecio8" layoutX="13.0" layoutY="183.0" text="PRECIO" />
                </children>
             </Pane>
          </children>
@@ -278,10 +326,22 @@
                   <Button fx:id="btnShoesMen" layoutX="13.0" layoutY="41.0" mnemonicParsing="false" onAction="#changeGenShoes" prefHeight="25.0" prefWidth="225.0" text="ZAPATOS PARA HOMBRE" />
                </children>
             </Pane>
-            <Button fx:id="btnOpciones" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarOpciones" text="opciones" />
-            <Button fx:id="btnOpcionesUser" layoutX="872.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarOpcionesUser" text="cuenta usuario" />
-            <Button fx:id="btnentregados" layoutX="972.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarEntregados" text="entregados" />
-            <Button fx:id="btnMostrarCarrito" layoutX="1055.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarCarrito" text="carrito" />
+            <Button fx:id="btnOpciones" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarOpciones" text="opciones">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnOpcionesUser" layoutX="872.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarOpcionesUser" text="cuenta usuario">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnentregados" layoutX="972.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarEntregados" text="entregados">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btnMostrarCarrito" layoutX="1055.0" layoutY="14.0" mnemonicParsing="false" onAction="#mostrarCarrito" text="carrito">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>

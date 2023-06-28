@@ -1,1 +1,1 @@
-Juan,correo@shoes.com,123,12345678,21/06/2023,Masculino
+Juan,correo@shoes.com,123,12345678,17/06/2023,Masculino
