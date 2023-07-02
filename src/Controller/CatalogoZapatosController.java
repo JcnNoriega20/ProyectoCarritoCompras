@@ -198,7 +198,7 @@ public class CatalogoZapatosController implements Initializable {
     @FXML
     private Button btnAggCarritoP;
     @FXML
-    private ComboBox<?> cmbTallaP;
+    private ComboBox<String> cmbTallaP;
     @FXML
     private Label lblMarcaP;
     @FXML
@@ -246,6 +246,7 @@ public class CatalogoZapatosController implements Initializable {
         cmbTalla6.setItems(FXCollections.observableArrayList(valuesCmb));
         cmbTalla7.setItems(FXCollections.observableArrayList(valuesCmb));
         cmbTalla8.setItems(FXCollections.observableArrayList(valuesCmb));
+        cmbTallaP.setItems(FXCollections.observableArrayList(valuesCmb));
 
         almacenarImagen();
         mostrarImagenes();

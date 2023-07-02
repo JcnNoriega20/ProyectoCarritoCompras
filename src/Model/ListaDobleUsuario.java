@@ -252,6 +252,20 @@ public class ListaDobleUsuario {
         }
     }
     
+    public boolean usuarioRegistrado(NodoUsuario usuario) {
+    NodoUsuario nodoActual = cab;
+
+    while (nodoActual != null) {
+        if (nodoActual.email.equalsIgnoreCase(usuario.email)) {
+            return true; // El usuario ya está registrado
+        }
+        nodoActual = nodoActual.sig;
+    }
+
+    return false; // El usuario no está registrado
+}
+
+    
     public void guardarDatosEnArchivo(ListaDobleUsuario listaUsuarios) {
         String nombre = "user.txt";
         Path ubicacion = Paths.get(System.getProperty("user.dir"), nombre);
@@ -277,6 +291,7 @@ public class ListaDobleUsuario {
             System.out.println("Error al guardar los datos en el archivo: " + e.getMessage());
         }
     }
+
 
     public void cargarDatosDesdeArchivo() {
         String nombreArchivo = "user.txt";
