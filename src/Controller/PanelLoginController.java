@@ -5,6 +5,7 @@
 package Controller;
 
 import Model.ListaDobleUsuario;
+import Model.ListaDobleZapato;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,6 +48,7 @@ public class PanelLoginController implements Initializable {
      * Initializes the controller class.
      */
     ListaDobleUsuario metodUser = new ListaDobleUsuario();
+    ListaDobleZapato metodShoes = new ListaDobleZapato();
     
     public PanelLoginController() {
         metodUser.cargarDatosDesdeArchivo();
@@ -68,6 +70,7 @@ public class PanelLoginController implements Initializable {
                 Parent root = loader.load();
                 CatalogoZapatosController catalogoController = loader.getController();
                 catalogoController.setMetodUser(metodUser);
+                
                 
                 Scene scene = new Scene(root);                
                 Stage stage = new Stage();
@@ -92,7 +95,7 @@ public class PanelLoginController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/PanelRegister.fxml"));
             Parent root = loader.load();
             PanelRegisterController controller = loader.getController();
-            controller.setMiPrincipal(metodUser);
+            controller.setMiPrincipal(metodUser);            
             Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle("Registro de usuario");

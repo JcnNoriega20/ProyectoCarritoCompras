@@ -49,6 +49,7 @@ public class PanelRegisterController implements Initializable {
      * Initializes the controller class.
      */
     ListaDobleUsuario metodUser2;
+
     public PanelRegisterController() {
     }
 
@@ -94,15 +95,28 @@ public class PanelRegisterController implements Initializable {
 
     @FXML
     private void registrarUser(ActionEvent event) {
-         metodUser2.setAddFinal(
-                    txtNomApeReg,
-                    txtEmailReg,
-                    txtNumCel,
-                    txtPassReg,
-                    dateFechaNac,
-                    cmbGender);
-         metodUser2.guardarDatosEnArchivo(metodUser2);
-        
+        metodUser2.setAddFinal(
+                txtNomApeReg,
+                txtEmailReg,
+                txtNumCel,
+                txtPassReg,
+                dateFechaNac,
+                cmbGender);
+        metodUser2.guardarDatosEnArchivo(metodUser2);
+
+    }
+
+    @FXML
+    private void eventKey(KeyEvent key) {
+        if (key.getSource() == txtNomApeReg) {
+
+            String input = key.getCharacter();
+            if (!input.matches("[a-zA-Z\\s]")) {
+                // Consumir el evento para evitar que se ingrese el carácter no deseado
+                key.consume();
+            }
+
+        }
     }
 
     @FXML
@@ -112,8 +126,8 @@ public class PanelRegisterController implements Initializable {
 
     @FXML
     private void cerrarRegister(ActionEvent event) {
-            Stage stage = (Stage) this.btnRegister.getScene().getWindow();
-            stage.close();
+        Stage stage = (Stage) this.btnRegister.getScene().getWindow();
+        stage.close();
     }
 
 }

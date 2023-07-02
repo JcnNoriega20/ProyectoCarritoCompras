@@ -57,6 +57,7 @@ public class ListaDobleUsuario {
         }
     }
 
+    
     public NodoUsuario getCrearNodo(
             TextField txtNombre,
             TextField txtEmail,
@@ -277,13 +278,13 @@ public class ListaDobleUsuario {
         }
     }
 
-    public ListaDobleUsuario cargarDatosDesdeArchivo() {
+    public void cargarDatosDesdeArchivo() {
         String nombreArchivo = "user.txt";
         Path ubicacion = Paths.get(System.getProperty("user.dir"), nombreArchivo);
 
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        ListaDobleUsuario listaUsuarios = new ListaDobleUsuario();
+        
 
         try (BufferedReader reader = new BufferedReader(new FileReader(ubicacion.toFile()))) {
             String linea;
@@ -298,22 +299,20 @@ public class ListaDobleUsuario {
                 LocalDate fechaNacimiento = LocalDate.parse(atributos[4], dateFormatter);
                 String genero = atributos[5];
 
-                listaUsuarios.insertarFinal(nombre, correo, numCelular, contrasena, fechaNacimiento, genero);
+                insertarFinal(nombre, correo, numCelular, contrasena, fechaNacimiento, genero);
             }
 
             System.out.println("Datos cargados correctamente desde el archivo.");
         } catch (IOException e) {
             System.out.println("Error al cargar los datos desde el archivo: " + e.getMessage());
         }
-
-        return listaUsuarios;
+        
     }
     
     public void insertarFinal(String nombre, String correo, String numCelular, String contrasena, LocalDate fechaNacimiento, String genero) {
         NodoUsuario nuevoNodo = new NodoUsuario(nombre, correo, numCelular, contrasena, fechaNacimiento, genero);
 
-        if (cab == null) {
-            
+        if (cab == null) {            
             cab = nuevoNodo;
         } else {
             NodoUsuario temp = cab;            

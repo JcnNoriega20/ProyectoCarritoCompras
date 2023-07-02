@@ -1,6 +1,8 @@
 package Controller;
 
 import Model.ListaDobleUsuario;
+import Model.ListaDobleZapato;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
@@ -9,11 +11,13 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -38,38 +42,24 @@ import sun.plugin2.os.windows.Windows;
 public class CatalogoZapatosController implements Initializable {
 
     ListaDobleUsuario metodUser;
+    ListaDobleZapato metodShoes = new ListaDobleZapato();
+
     private Map<Pane, Image> paneImageMap;
 
     @FXML
-    private Pane zapato1;
-    @FXML
-    private Pane zapato2;
-    @FXML
     private Pane img1;
-    @FXML
-    private Pane zapato5;
     @FXML
     private Pane img5;
     @FXML
     private Pane img2;
     @FXML
-    private Pane zapato3;
-    @FXML
     private Pane img3;
-    @FXML
-    private Pane zapato4;
     @FXML
     private Pane img4;
     @FXML
-    private Pane zapato6;
-    @FXML
     private Pane img6;
     @FXML
-    private Pane zapato7;
-    @FXML
     private Pane img7;
-    @FXML
-    private Pane zapato8;
     @FXML
     private Pane img8;
     @FXML
@@ -78,16 +68,7 @@ public class CatalogoZapatosController implements Initializable {
     private Pane panelProducto;
     @FXML
     private BorderPane vtnVistaProducto;
-    @FXML
-    private Button btnAggCarrito;
-    @FXML
     private ComboBox<String> cmbTalla;
-    @FXML
-    private Label lblMarca;
-    @FXML
-    private Label lblTipo;
-    @FXML
-    private Label lblPrecio;
     @FXML
     private Label lblPrecio1;
     @FXML
@@ -114,7 +95,6 @@ public class CatalogoZapatosController implements Initializable {
     private Button btnPagarProduct;
     @FXML
     private Button btnAggCrto1;
-
     @FXML
     private Button btnAggCrto4;
     @FXML
@@ -215,7 +195,22 @@ public class CatalogoZapatosController implements Initializable {
     private Label lblPrecio8;
     @FXML
     private ComboBox<String> cmbTalla3;
-    private int i = 0;
+    @FXML
+    private Button btnAggCarritoP;
+    @FXML
+    private ComboBox<?> cmbTallaP;
+    @FXML
+    private Label lblMarcaP;
+    @FXML
+    private Label lblTipoP;
+    @FXML
+    private Label lblPrecioP;
+    @FXML
+    private Label lblDescriptionP;
+    @FXML
+    private Label lblGeneroP;
+    @FXML
+    private AnchorPane root;
 
     public CatalogoZapatosController() {
 
@@ -223,6 +218,7 @@ public class CatalogoZapatosController implements Initializable {
 
     public CatalogoZapatosController(ListaDobleUsuario metodUser) {
         this.metodUser = metodUser;
+        //this.metodShoes = metodShoes;
 
     }
 
@@ -240,8 +236,8 @@ public class CatalogoZapatosController implements Initializable {
         panelProducto.setVisible(false);
         scrollPane.setFitToHeight(true);
         scrollPane.setFitToWidth(true);
-        
-        String[] valuesCmb = {"35","36","37","38","39","40"};
+
+        String[] valuesCmb = {"35", "36", "37", "38", "39", "40"};
         cmbTalla1.setItems(FXCollections.observableArrayList(valuesCmb));
         cmbTalla2.setItems(FXCollections.observableArrayList(valuesCmb));
         cmbTalla3.setItems(FXCollections.observableArrayList(valuesCmb));
@@ -250,7 +246,7 @@ public class CatalogoZapatosController implements Initializable {
         cmbTalla6.setItems(FXCollections.observableArrayList(valuesCmb));
         cmbTalla7.setItems(FXCollections.observableArrayList(valuesCmb));
         cmbTalla8.setItems(FXCollections.observableArrayList(valuesCmb));
-                
+
         almacenarImagen();
         mostrarImagenes();
     }
@@ -261,7 +257,8 @@ public class CatalogoZapatosController implements Initializable {
             Image image = entry.getValue();
 
             ImageView imageView = new ImageView(image);
-            pane.getChildren().add(imageView);
+            pane.getChildren().add(imageView);           
+            
         }
     }
 
@@ -276,6 +273,8 @@ public class CatalogoZapatosController implements Initializable {
         paneImageMap.put(img7, new Image("/Images/shoesMen7.jpg"));
         paneImageMap.put(img8, new Image("/Images/shoesMen8.jpg"));
     }
+    
+    
 
     @FXML
     private void mostrarCarrito(ActionEvent event) {
@@ -285,23 +284,42 @@ public class CatalogoZapatosController implements Initializable {
     }
 
     @FXML
-    private String mostrarProducto(MouseEvent event) {
+    private void mostrarProducto(MouseEvent event) {  
         Pane eventPane = (Pane) event.getSource();
-        panelProducto.setVisible(true);
-        //Image image = new Image("/Images/shoesMen1.jpg");
-        return eventPane.getId();
+    String paneId = eventPane.getId();
+
+    // Obtener la imagen correspondiente al panel seleccionado
+    Image image = paneImageMap.get(eventPane);
+
+    // Limpiar el panel grande
+    panelFoto.getChildren().clear();
+
+    // Mostrar la imagen ampliada en el panel grande
+    ImageView imageViewAmpliada = new ImageView(image);
+    imageViewAmpliada.setFitWidth(200);
+    imageViewAmpliada.setFitHeight(200);
+
+    panelFoto.getChildren().add(imageViewAmpliada);
+    panelProducto.setVisible(true);
+        
     }
+    
 
     @FXML
     private void volverCatalogo(ActionEvent event) {
         panelProducto.setVisible(false);
-        panelFoto.getChildren().remove(new ImageView());
+        ObservableList<Node> elementos = panelFoto.getChildren();
+        for (Node elemento : elementos) {
+            System.out.println(elemento);
+            //panelFoto.getChildren().remove(elemento);
+        }
+
     }
 
     @FXML
     private void cambiarCursor(MouseEvent event) {
     }
-    
+
     @FXML
     private void aggCarrito(ActionEvent event) {
         Button eventBtn = (Button) event.getSource();
@@ -345,6 +363,8 @@ public class CatalogoZapatosController implements Initializable {
                 contendElemtZapatos.add(btnEliminar, 1, 2);
 
                 panelContenCarrito.getChildren().add(contendElemtZapatos);
+                metodShoes.addFinal(lblMarca1.getText(), lblTipo1.getText(),
+                        lblPrecio1.getText(), lblGenero1.getText(), cmbTalla1.getValue());
                 break;
             case "btnAggCrto2":
                 lblTalla.setText(cmbTalla2.getValue());
@@ -367,6 +387,7 @@ public class CatalogoZapatosController implements Initializable {
                 contendElemtZapatos.add(btnEliminar, 1, 2);
 
                 panelContenCarrito.getChildren().add(contendElemtZapatos);
+
                 break;
 
             case "btnAggCrto3":
@@ -438,11 +459,11 @@ public class CatalogoZapatosController implements Initializable {
                 panelContenCarrito.getChildren().add(contendElemtZapatos);
                 break;
             case "btnAggCrto6":
-                lblTalla.setText(cmbTalla1.getValue());
-                lblPrecio.setText(lblPrecio1.getText());
-                lblMarca.setText(lblMarca1.getText());
-                lblGenero.setText(lblGenero1.getText());
-                lblTipoZap.setText(lblTipo1.getText());
+                lblTalla.setText(cmbTalla6.getValue());
+                lblPrecio.setText(lblPrecio6.getText());
+                lblMarca.setText(lblMarca6.getText());
+                lblGenero.setText(lblGenero6.getText());
+                lblTipoZap.setText(lblTipo6.getText());
 
                 column.setPrefWidth(panelContenCarrito.getWidth() / 2);
 
@@ -460,11 +481,11 @@ public class CatalogoZapatosController implements Initializable {
                 panelContenCarrito.getChildren().add(contendElemtZapatos);
                 break;
             case "btnAggCrto7":
-                lblTalla.setText(cmbTalla1.getValue());
-                lblPrecio.setText(lblPrecio1.getText());
-                lblMarca.setText(lblMarca1.getText());
-                lblGenero.setText(lblGenero1.getText());
-                lblTipoZap.setText(lblTipo1.getText());
+                lblTalla.setText(cmbTalla7.getValue());
+                lblPrecio.setText(lblPrecio7.getText());
+                lblMarca.setText(lblMarca7.getText());
+                lblGenero.setText(lblGenero7.getText());
+                lblTipoZap.setText(lblTipo7.getText());
 
                 column.setPrefWidth(panelContenCarrito.getWidth() / 2);
 
@@ -482,11 +503,11 @@ public class CatalogoZapatosController implements Initializable {
                 panelContenCarrito.getChildren().add(contendElemtZapatos);
                 break;
             case "btnAggCrto8":
-                lblTalla.setText(cmbTalla1.getValue());
-                lblPrecio.setText(lblPrecio1.getText());
-                lblMarca.setText(lblMarca1.getText());
-                lblGenero.setText(lblGenero1.getText());
-                lblTipoZap.setText(lblTipo1.getText());
+                lblTalla.setText(cmbTalla8.getValue());
+                lblPrecio.setText(lblPrecio8.getText());
+                lblMarca.setText(lblMarca8.getText());
+                lblGenero.setText(lblGenero8.getText());
+                lblTipoZap.setText(lblTipo8.getText());
 
                 column.setPrefWidth(panelContenCarrito.getWidth() / 2);
 
