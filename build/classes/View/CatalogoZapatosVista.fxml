@@ -49,10 +49,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla1" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca1" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero1" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo1" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio1" layoutX="11.0" layoutY="182.0" text="30000" />
+                  <Label fx:id="lblMarca1" layoutX="13.0" layoutY="158.0" text="MARCA: Vanz" />
+                  <Label fx:id="lblGenero1" layoutX="103.0" layoutY="182.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo1" layoutX="103.0" layoutY="158.0" text="TIPO: Casual" />
+                  <Label fx:id="lblPrecio1" layoutX="11.0" layoutY="182.0" text="PRECIO: 30000" />
                </children>
             </Pane>
             <Pane prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.rowIndex="1">
@@ -74,10 +74,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla5" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca5" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero5" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo5" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio5" layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca5" layoutX="13.0" layoutY="158.0" text="MARCA: Carooya" />
+                  <Label fx:id="lblGenero5" layoutX="117.0" layoutY="184.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo5" layoutX="117.0" layoutY="159.0" text="TIPO: Deportivo" />
+                  <Label fx:id="lblPrecio5" layoutX="13.0" layoutY="183.0" text="PRECIO: 70000" />
                </children>
             </Pane>
             <Pane layoutX="18.0" layoutY="18.0" prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1">
@@ -99,10 +99,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla2" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca2" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero2" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo2" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio2" layoutX="13.0" layoutY="183.0" text="25000" />
+                  <Label fx:id="lblMarca2" layoutX="13.0" layoutY="158.0" text="MARCA: Vanz" />
+                  <Label fx:id="lblGenero2" layoutX="103.0" layoutY="183.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo2" layoutX="103.0" layoutY="158.0" text="TIPO: Casual" />
+                  <Label fx:id="lblPrecio2" layoutX="13.0" layoutY="183.0" text="PRECIO: 35000" />
                </children>
             </Pane>
             <Pane prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2">
@@ -124,10 +124,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla3" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca3" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero3" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo3" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio3" layoutX="13.0" layoutY="184.0" text="PRECIO" />
+                  <Label fx:id="lblMarca3" layoutX="13.0" layoutY="158.0" text="MARCA: Vanz" />
+                  <Label fx:id="lblGenero3" layoutX="103.0" layoutY="184.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo3" layoutX="103.0" layoutY="158.0" text="TIPO: Casual" />
+                  <Label fx:id="lblPrecio3" layoutX="13.0" layoutY="184.0" text="PRECIO: 45000" />
                </children>
             </Pane>
             <Pane prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3">
@@ -149,10 +149,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla4" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca4" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero4" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo4" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio4" layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca4" layoutX="13.0" layoutY="158.0" text="MARCA: Vanz" />
+                  <Label fx:id="lblGenero4" layoutX="103.0" layoutY="183.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo4" layoutX="103.0" layoutY="158.0" text="TIPO: Deportivo" />
+                  <Label fx:id="lblPrecio4" layoutX="13.0" layoutY="183.0" text="PRECIO: 40000" />
                </children>
             </Pane>
             <Pane prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="1" GridPane.rowIndex="1">
@@ -174,10 +174,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla6" layoutX="99.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="13.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca6" layoutX="9.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero6" layoutX="176.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo6" layoutX="99.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio6" layoutX="10.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca6" layoutX="9.0" layoutY="158.0" text="MARCA: Carooya" />
+                  <Label fx:id="lblGenero6" layoutX="108.0" layoutY="184.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo6" layoutX="108.0" layoutY="159.0" text="TIPO: Clasico" />
+                  <Label fx:id="lblPrecio6" layoutX="10.0" layoutY="183.0" text="PRECIO: 72000" />
                </children>
             </Pane>
             <Pane prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="2" GridPane.rowIndex="1">
@@ -199,10 +199,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla7" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca7" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero7" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo7" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio7" layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca7" layoutX="13.0" layoutY="158.0" text="MARCA: Carooya" />
+                  <Label fx:id="lblGenero7" layoutX="122.0" layoutY="184.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo7" layoutX="122.0" layoutY="159.0" text="TIPO: Clasico" />
+                  <Label fx:id="lblPrecio7" layoutX="13.0" layoutY="183.0" text="72000" />
                </children>
             </Pane>
             <Pane prefHeight="122.0" prefWidth="106.0" style="-fx-background-color: C5EAFF;" GridPane.columnIndex="3" GridPane.rowIndex="1">
@@ -224,10 +224,10 @@
                      </cursor></Button>
                   <ComboBox fx:id="cmbTalla8" layoutX="103.0" layoutY="208.0" prefWidth="150.0" promptText="Seleccione su talla" />
                   <Label layoutX="17.0" layoutY="212.0" text="TALLA" />
-                  <Label fx:id="lblMarca8" layoutX="13.0" layoutY="158.0" text="MARCA" />
-                  <Label fx:id="lblGenero8" layoutX="180.0" layoutY="158.0" text="GÉNERO" />
-                  <Label fx:id="lblTipo8" layoutX="103.0" layoutY="158.0" text="TIPO" />
-                  <Label fx:id="lblPrecio8" layoutX="13.0" layoutY="183.0" text="PRECIO" />
+                  <Label fx:id="lblMarca8" layoutX="13.0" layoutY="158.0" text="MARCA: Carooya" />
+                  <Label fx:id="lblGenero8" layoutX="117.0" layoutY="184.0" text="GÉNERO: Masculino" />
+                  <Label fx:id="lblTipo8" layoutX="117.0" layoutY="159.0" text="TIPO: Clasico" />
+                  <Label fx:id="lblPrecio8" layoutX="13.0" layoutY="183.0" text="PRECIO: 75000" />
                </children>
             </Pane>
          </children>
