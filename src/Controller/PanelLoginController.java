@@ -5,7 +5,7 @@
 package Controller;
 
 import Model.ListaDobleUsuario;
-import Model.ListaDobleZapato;
+import Model.ListaColaZapato;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +15,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -48,7 +47,7 @@ public class PanelLoginController implements Initializable {
      * Initializes the controller class.
      */
     ListaDobleUsuario metodUser = new ListaDobleUsuario();
-    ListaDobleZapato metodShoes = new ListaDobleZapato();
+    ListaColaZapato metodShoes = new ListaColaZapato();
     
     public PanelLoginController() {
         metodUser.cargarDatosDesdeArchivo();
@@ -56,7 +55,7 @@ public class PanelLoginController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        metodUser.cargarDatosDesdeArchivo();
+        //metodUser.cargarDatosDesdeArchivo();
     }
     
     @FXML

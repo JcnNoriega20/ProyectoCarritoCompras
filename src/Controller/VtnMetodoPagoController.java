@@ -4,6 +4,8 @@
  */
 package Controller;
 
+import Model.ListaColaZapato;
+import Model.ListaDobleProdPag;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -45,6 +47,30 @@ public class VtnMetodoPagoController implements Initializable {
     private Button btnCancelarCompra;
     @FXML
     private Button btnRealizarCompra;
+    
+    ListaDobleProdPag metodProdPag = new ListaDobleProdPag();
+    ListaColaZapato metodCola;
+    
+    public VtnMetodoPagoController(){
+        
+    }
+    
+    public VtnMetodoPagoController(ListaColaZapato metColaZapato){
+        this.metodCola=metColaZapato;
+    }
+
+    public void setMetodCola(ListaColaZapato metodCola) {
+        this.metodCola = metodCola;
+    }
+
+    public ListaColaZapato getMetodCola() {
+        return metodCola;
+    }
+    
+    
+    
+    
+    
 
     /**
      * Initializes the controller class.
@@ -174,6 +200,16 @@ public class VtnMetodoPagoController implements Initializable {
                     throw new AssertionError();
             }
         });
+    }
+
+    @FXML
+    private void cerrarVentana(ActionEvent event) {
+        metodProdPag.mostrarNodos();
+    }
+
+    @FXML
+    private void pagarProductos(ActionEvent event) {
+        metodCola.pasarDatosAListaDoble(metodCola, metodProdPag);
     }
 
 }

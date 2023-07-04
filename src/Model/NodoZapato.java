@@ -6,7 +6,7 @@ public class NodoZapato {
     double precio;
     String genero;
     String talla;
-    NodoZapato sig, ant;
+    NodoZapato sig;
 
     public NodoZapato(String marca, String tipo, double precio, String genero, String talla) {
         this.marca = marca;
@@ -14,7 +14,7 @@ public class NodoZapato {
         this.precio = precio;
         this.genero = genero;
         this.talla = talla;
-        sig=ant=null;
+        sig=null;
     }
     
     

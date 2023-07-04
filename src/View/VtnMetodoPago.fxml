@@ -83,7 +83,7 @@
             </GridPane>
             <HBox alignment="CENTER" prefHeight="0.0" prefWidth="468.0">
                <children>
-                  <Button fx:id="btnCancelarCompra" mnemonicParsing="false" text="CANCELAR">
+                  <Button fx:id="btnCancelarCompra" mnemonicParsing="false" onAction="#cerrarVentana" text="CANCELAR">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -91,7 +91,7 @@
                         <Insets right="283.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnRealizarCompra" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="ACEPTAR">
+                  <Button fx:id="btnRealizarCompra" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#pagarProductos" text="ACEPTAR">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

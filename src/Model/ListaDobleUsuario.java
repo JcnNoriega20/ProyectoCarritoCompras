@@ -9,6 +9,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -57,7 +60,6 @@ public class ListaDobleUsuario {
         }
     }
 
-    
     public NodoUsuario getCrearNodo(
             TextField txtNombre,
             TextField txtEmail,
@@ -144,6 +146,37 @@ public class ListaDobleUsuario {
             return aux;
         }
     }
+    
+    public void setAddFinal(
+            TextField txtNombre,
+            TextField txtEmail,
+            TextField txtNumCel,
+            TextField txtPasswd,
+            DatePicker txtfechaNac,
+            ComboBox cmbGender) {
+
+        NodoUsuario nuevoUser = getCrearNodo(
+                txtNombre,
+                txtEmail,
+                txtNumCel,
+                txtPasswd,
+                txtfechaNac,
+                cmbGender);
+
+        if (nuevoUser != null) {
+            if (cab == null) {
+                cab = nuevoUser;
+
+            } else {
+
+                NodoUsuario ultimo = getUltimo();
+                ultimo.sig = nuevoUser;
+                nuevoUser.ant = ultimo;
+                alerta("Aviso", "Se ha registrado con exito");
+            }
+        } else {
+        }
+    }
 
     public boolean validarCuenta(TextField txtCorreo, TextField txtPass) {
         boolean validar = true;
@@ -195,111 +228,60 @@ public class ListaDobleUsuario {
         }
     }
 
-    public void setAddInicio(
-            TextField txtNombre,
-            TextField txtEmail,
-            TextField txtNumCel,
-            TextField txtPasswd,
-            DatePicker txtfechaNac,
-            ComboBox cmbGender) {
-        
-        NodoUsuario info = getCrearNodo(txtNombre, txtEmail, txtNumCel,
-                txtPasswd, txtfechaNac, cmbGender);
-
-        if (info != null) {
-            if (cab == null) {
-                cab = info;
-                alerta("Aviso", "Se ha registrado");
-            } else {
-                info.sig = cab;
-                cab.ant = info;
-                cab = info;
-                alerta("Aviso", "Se ha registrado al inicio ");
-            }
-        } else {
-        }
-    }
+    
 
     
-    public void setAddFinal(
-            TextField txtNombre,
-            TextField txtEmail,
-            TextField txtNumCel,
-            TextField txtPasswd,
-            DatePicker txtfechaNac,
-            ComboBox cmbGender) {
-        
-        NodoUsuario nuevoUser = getCrearNodo(
-                txtNombre,
-                txtEmail,
-                txtNumCel,
-                txtPasswd,
-                txtfechaNac,
-                cmbGender);
 
-        if (nuevoUser != null) {
-            if (cab == null) {
-                cab = nuevoUser;
-
-            } else {
-
-                NodoUsuario ultimo = getUltimo();
-                ultimo.sig = nuevoUser;
-                nuevoUser.ant = ultimo;
-                alerta("Aviso", "Se ha registrado con exito");
-            }
-        } else {
-        }
-    }
-    
     public boolean usuarioRegistrado(NodoUsuario usuario) {
-    NodoUsuario nodoActual = cab;
+        NodoUsuario nodoActual = cab;
 
-    while (nodoActual != null) {
-        if (nodoActual.email.equalsIgnoreCase(usuario.email)) {
-            return true; // El usuario ya está registrado
+        while (nodoActual != null) {
+            if (nodoActual.email.equalsIgnoreCase(usuario.email)) {
+                return true; // El usuario ya está registrado
+            }
+            nodoActual = nodoActual.sig;
         }
-        nodoActual = nodoActual.sig;
+
+        return false; // El usuario no está registrado
     }
 
-    return false; // El usuario no está registrado
-}
-
-    
     public void guardarDatosEnArchivo(ListaDobleUsuario listaUsuarios) {
-        String nombre = "user.txt";
-        Path ubicacion = Paths.get(System.getProperty("user.dir"), nombre);
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    String nombreArchivo = "user.txt";
+    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(ubicacion.toFile()))) {
-            NodoUsuario nodoActual = cab;
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+        Set<String> correos = new HashSet<>(); // Conjunto para almacenar los correos existentes
 
-            while (nodoActual != null) {
+        NodoUsuario nodoActual = listaUsuarios.cab;
+
+        while (nodoActual != null) {
+            if (!correos.contains(nodoActual.email)) {
+                correos.add(nodoActual.email); // Agregar el correo al conjunto para verificar duplicados
                 writer.write(nodoActual.nombre + ",");
                 writer.write(nodoActual.email + ",");
                 writer.write(nodoActual.numCel + ",");
                 writer.write(nodoActual.passwd + ",");
-                writer.write(nodoActual.fechaNac.format(dateFormatter) + ",");
+                writer.write(nodoActual.fechaNac.format(dateFormatter).toString() + ",");
                 writer.write(nodoActual.gen);
                 writer.newLine();
-
-                nodoActual = nodoActual.sig;
+            } else {
+                System.out.println("Ya existe un usuario con el correo: " + nodoActual.email);
             }
 
-            System.out.println("Datos guardados correctamente en el archivo.");
-        } catch (IOException e) {
-            System.out.println("Error al guardar los datos en el archivo: " + e.getMessage());
+            nodoActual = nodoActual.sig;
         }
-    }
 
+        System.out.println("Datos guardados correctamente en el archivo.");
+    } catch (IOException e) {
+        System.out.println("Error al guardar los datos en el archivo: " + e.getMessage());
+    }
+}
 
     public void cargarDatosDesdeArchivo() {
         String nombreArchivo = "user.txt";
         Path ubicacion = Paths.get(System.getProperty("user.dir"), nombreArchivo);
 
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-        
 
         try (BufferedReader reader = new BufferedReader(new FileReader(ubicacion.toFile()))) {
             String linea;
@@ -321,21 +303,21 @@ public class ListaDobleUsuario {
         } catch (IOException e) {
             System.out.println("Error al cargar los datos desde el archivo: " + e.getMessage());
         }
-        
+
     }
-    
+
     public void insertarFinal(String nombre, String correo, String numCelular, String contrasena, LocalDate fechaNacimiento, String genero) {
         NodoUsuario nuevoNodo = new NodoUsuario(nombre, correo, numCelular, contrasena, fechaNacimiento, genero);
 
-        if (cab == null) {            
+        if (cab == null) {
             cab = nuevoNodo;
         } else {
-            NodoUsuario temp = cab;            
+            NodoUsuario temp = cab;
             while (temp.sig != null) {
                 temp = temp.sig;
-            }            
-            temp.sig=nuevoNodo;
-            nuevoNodo.ant=temp;
+            }
+            temp.sig = nuevoNodo;
+            nuevoNodo.ant = temp;
         }
     }
 
